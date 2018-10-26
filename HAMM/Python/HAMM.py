@@ -6,7 +6,7 @@ def point_mutations(seq1: str, seq2: str) -> int:
     '''
     Count point mutations between two given sequences of equal length.
     '''
-    count = 0 # int
+    count = 0 # Type: int
     for i in range(len(seq1)):
         if seq1[i] != seq2[i]:
             count += 1

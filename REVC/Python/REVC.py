@@ -1,7 +1,7 @@
 import sys
 import json
 
-# Run in command-line as $python REVC.py complement.json file-path
+# Run in command line as $python REVC.py complement.json file-path
 
 try:
     json_file = sys.argv[1]
@@ -30,10 +30,3 @@ finally:
     rev_complement = reverse_complement(dna)
     print("\nSolution without Biopython:")
     print(rev_complement)
-    # Using Biopython
-    from Bio.Seq import Seq
-    from Bio.Alphabet import generic_dna
-    dna_seq = Seq(dna, generic_dna)
-    rev_complement_seq = dna_seq.reverse_complement()
-    print("\nSolution with Biopython:")
-    print(rev_complement_seq)

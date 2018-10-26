@@ -1,7 +1,7 @@
 import sys
 import json
 
-# Run in command-line with $python PROT.py rna-protein.json file-path
+# Run in command line with $python PROT.py rna_protein.json file-path
 
 try:
     json_file = sys.argv[1]
@@ -30,10 +30,4 @@ finally:
     protein = translate(rna)
     print("\nSolution without Biopython:")
     print(protein)
-    # Using Biopython
-    from Bio.Seq import Seq
-    from Bio.Alphabet import generic_rna
-    rna_seq = Seq(rna, generic_rna)
-    protein_seq = rna_seq.translate()
-    print("\nSolution with Biopython:")
-    print(protein_seq)
+
