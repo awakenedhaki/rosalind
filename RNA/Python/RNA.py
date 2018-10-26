@@ -1,6 +1,6 @@
 import sys
 
-# Run in command-line as $python RNA.py file-path
+# Run in command line as $python RNA.py file-path
 
 def transcribe(dna: str) -> str:
     '''
@@ -20,10 +20,3 @@ if __name__ == '__main__':
         rna = transcribe(dna)
         print("\nSolution without Biopython:")
         print(rna)
-        # Using Biopython
-        from Bio.Seq import Seq
-        from Bio.Alphabet import generic_dna
-        dna_seq = Seq(dna, generic_dna)
-        rna_seq = dna_seq.transcribe()
-        print("\nSolution with Biopython")
-        print(rna_seq)
