@@ -1,1 +1,1 @@
-# rosalind
+# Rosalind Bioinformatics Problems
