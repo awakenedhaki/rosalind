@@ -1,0 +1,63 @@
+(require spd/tags)
+
+(HtDD Nucleotide)
+;; Nucleotide is A C G T
+
+#;
+(define (fn-for-nucleotide nt)
+    (cond [(string=? nt "#/A") (...)]
+          [(string=? nt "#/C") (...)]
+          [(string=? nt "#/G") (...)]
+          [(string=? nt "#/T") (...)]))
+
+(@HtDD Counts)
+(define-struct counts (a c g t))
+;; Counts is (make-counts Natural Natural Natural Natural)
+;; interp. Counts is the count of each nucleotide in a DNA sequence
+
+#;
+(define (fn-for-counts c)
+    (... (counts-a c)
+         (counts-c c)
+         (counts-g c)
+         (counts-t c)))
+
+(@HtDF count-nucleotides)
+(@signature String -> Counts)
+;; produce the counts of each nucleotide in a DNA sequence
+
+(check-expect 
+    (count-nucleotides 
+        "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC")
+    (make-counts 20 12 17 21))
+
+(@template Counts Nucleotide (listof Nucleotide))
+(define (counts-nt s)
+    (local [(define SEQ (string->list s))
+            (define (counts-nt seq counts)
+                (cond [(empty? seq) counts]
+                      [else
+                        (counts-nt (rest seq)
+                                   (check-nt (first seq)))]))
+            (define (check-nt nt counts)
+                (cond [(char=? nt "#/A")
+                       (make-counts (+ 1 (counts-a c))
+                                    (counts-c c)
+                                    (counts-g c)
+                                    (counts-c t))]
+                      [(char=? nt "#/C")
+                       (make-counts (counts-a c)
+                                    (+ 1 (counts-c c))
+                                    (counts-g c)
+                                    (counts-c t))]
+                      [(char=? nt "#/C")
+                       (make-counts (counts-a c)
+                                    (counts-c c)
+                                    (+ 1 (counts-g c))
+                                    (counts-c t))]
+                      [(char=? nt "#/C")
+                       (make-counts (counts-a c)
+                                    (counts-c c)
+                                    (counts-g c)
+                                    (+ 1 (counts-c t)))]))]
+        (counts-nt s (make-counts 0 0 0 0))))

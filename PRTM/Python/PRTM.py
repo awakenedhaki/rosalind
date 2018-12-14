@@ -16,7 +16,7 @@ def protein_mass(protein: str) -> float:
     Calculate monoisotopic mass of protein sequence.
     Mass values used were those referenced in Rosalind.
     '''
-    mass = 0.0 # float
+    mass: float = 0.0
     for aa in protein:
         mass += protein_mass_dict[aa]
     return mass

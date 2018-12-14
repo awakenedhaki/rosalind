@@ -1,5 +1,9 @@
+import os
 import sys
 
+home = os.getenv('HOME')
+sys.path.append(home + '/github/rosalind_scraper')
+import tester
 # Run in command-line with $python DNA_cond.py file-path
 
 def count_nt(dna: str) -> tuple:
@@ -21,10 +25,10 @@ def count_nt(dna: str) -> tuple:
 if __name__ == "__main__":
     try:
         filename = sys.argv[1]
-        with open(filename, 'r') as infile:
-            sequence = infile.readline()
     except (FileNotFoundError, IndexError):
         print("Run program using $python DNA_cond.py file-path")
     finally:
+        with open(filename, 'r') as infile:
+            sequence = infile.readline()
         counts = count_nt(sequence)
         print(f'{counts[0]} {counts[1]} {counts[2]} {counts[3]}')
