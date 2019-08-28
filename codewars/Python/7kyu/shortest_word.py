@@ -1,6 +1,6 @@
 # shortest_word.py
 
-# author: awakenedhaki
+__author__: awakenedhaki
 
 def find_short(s: str) -> int:
     '''

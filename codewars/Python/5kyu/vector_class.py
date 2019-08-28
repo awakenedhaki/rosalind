@@ -1,6 +1,6 @@
 # vector_class.py
 
-# author: awakenedhaki
+__author__ = awakenedhaki
 
 import operator
 

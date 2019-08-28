@@ -1,8 +1,14 @@
 # zeros_to_end.py
 
-# author: awakenedhaki
+__author__ = awakenedhaki
 
 def move_zeros(array):
+    '''
+    Moves all zeros to the end
+
+    :param array: List of integers
+    :return: List of integers   
+    '''
     new_array = []
     zeros: int = []
     while array:

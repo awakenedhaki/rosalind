@@ -1,9 +1,14 @@
 # dna_to_rna.py
 
-# author: awakenedhaki
+__author__ = "awakenedhaki"
 
-def DNAtoRNA(dna: str) -> str: 
+def dna_to_rna(dna: str) -> str:
     '''
     Replaces T with U.
+    ASSUME: dna string is provided in proper format,
+        all uppercase letter
+
+    :param dna: str
+    :return: str
     '''
     return dna.replace('T', 'U')

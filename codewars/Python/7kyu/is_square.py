@@ -1,6 +1,6 @@
 # is_square.py
 
-# author: awakenedhaki
+__author__ = "awakenedhaki"
 
 from math import sqrt
 

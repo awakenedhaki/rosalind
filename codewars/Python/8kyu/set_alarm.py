@@ -1,9 +1,12 @@
 # set_alarm.py
 
-# author: awakenedhaki
+__author__ = "awakenedhaki"
 
 def set_alarm(employed: bool, vacation: bool) -> bool:
-    '''
-    Determine if alarm should be set.
-    '''
+    """
+    Determine whether to set an alarm
+    :param employed: bool
+    :param vacation: bool
+    :return: bool
+    """
     return (employed and not vacation)

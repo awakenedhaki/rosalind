@@ -1,10 +1,13 @@
 # pig_latin.py
 
-# author: awakenedhaki
+__author__ = awakenedhaki
 
-def pig_it(text):
+def pig_it(text: str) -> str:
     '''
     Move first character to the end and adds ay.
+
+    :param text: str
+    :return: str
     '''
     s = ''
     for i in text.split():
